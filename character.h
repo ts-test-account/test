@@ -19,40 +19,13 @@ protected:
     
 public:
     //コンストラクタ・デストラクタ
-    character () 
-        :name("fighter")
-        ,hp(100)
-        ,mp(100)
-        ,str(30)
-        ,ac(10)
-        ,ev(15)
-        ,agi(20)
-        ,intl(20)
-        ,isPlayer(0)
-        ,target(0)
-        ,personalaction(0)
-        ,skill(0) {}
+    character():status(statusdatabase[0]){}
     
     //引数付きコンストラクタ
-    game (const StatusData& enemy) 
-        :id(0)
-        ,game_id(enemy.id)
-        ,name(enemy.name)
-        ,hp(enemy.hp)
-        ,mp(enemy.mp)
-        ,str(enemy.str)
-        ,ac(enemy.ac)
-        ,ev(enemy.ev)
-        ,agi(enemy.agi)
-        ,intl(enemy.intl)
-        ,isPlayer(enemy.isPlayer)
-        ,target(0)
-        ,personalaction(0)
-        ,skill(enemy.defaultskill) {}
-    
+    character (const StatusData& statusdata) :status(statusdata){}
     
     //デストラクタ
-    virtual ~game (){}
+    virtual ~character (){}
     
     //ゲッター・セッター
     std::string getName() const {return name;}

@@ -9,7 +9,7 @@
 #ifndef __rougelike__battleRund__
 #define __rougelike__battleRund__
 
-int dunRand(int startnumber\nint endnumber);
+int dunRand(int startnumber, int endnumber);
 
 #endif /* defined(__rougelike__battleRund__) */
 
