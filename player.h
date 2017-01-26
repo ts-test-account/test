@@ -1,36 +1,30 @@
 //
-//  character.h
+//  player.h
 //  rougelike
 //
 //  Created by 白川 岳史 on 2015/06/29.
 //  Copyright (c) 2015年 白川 岳史. All rights reserved.
 //
 
-#ifndef __rougelike__character__
-#define __rougelike__character__
+#ifndef __rougelike__player__
+#define __rougelike__player__
 
 #include <stdio.h>
-#include <characterParameter.h>
+#include <playerParameter.h>
 
-class character;
-typedef std::shared_ptr<game> ChrRef;
-
-class character {
-    
-protected:
-    StatusData status;
+class player {
     
 public:
     //コンストラクタ
-    character():status(statusdatabase[0]){}
+    player():status(statusdatabase[0]){}
     
     //引数付きコンストラクタ
-    character (const StatusData& statusdata) :status(statusdata){}
+    player (const StatusData& statusdata) :status(statusdata){}
     
     //デストラクタ
-    virtual ~character (){
+    virtual ~player (){
     
-    //ここにゲッター、セッターが必要か再検討
+    //ゲッター、セッターが必要か再検討
 
     //純粋仮想関数
     virtual void attack(ChrRef target) = 0;
@@ -40,5 +34,5 @@ public:
     virtual void viewUseableSkill() = 0; //enemyクラスには不要な実装なのでこの形が正しいかどうか後で検証
 };
 
-#endif /* defined(__rougelike__character__) */
+#endif /* defined(__rougelike__player__) */
 

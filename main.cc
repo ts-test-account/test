@@ -175,7 +175,7 @@ class Game {
 //
 //--------------------------------------------------------------
 
-class character {
+class player {
     
 protected:
     int id;
